@@ -1,5 +1,7 @@
 #include <iostream>
+#include "RamChip.h"
 
 int main() {
-    std::cout << "Hello World!\n";
+    RamChip chip;
+    chip.init();
 }

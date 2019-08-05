@@ -151,10 +151,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SimOs.cpp" />
+    <ClCompile Include="Ram.cpp" />
+    <ClCompile Include="RamChip.cpp" />
+    <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Notes.txt" />
+    <Text Include="Notes.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Ram.h" />
+    <ClInclude Include="RamChip.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
