@@ -6,7 +6,9 @@ class Ram {
 public:
     std::vector<RamChip*> *RamStack;
     RamChip* R(int i);
-    Ram();
+    Ram(int i = 3);
     ~Ram();
+    void ToBinary(int i);
+    int Count();
 };
 

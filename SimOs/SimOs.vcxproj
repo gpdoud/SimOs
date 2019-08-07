@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Alu.cpp" />
     <ClCompile Include="Ram.cpp" />
     <ClCompile Include="RamChip.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -159,6 +160,7 @@
     <Text Include="Notes.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Alu.h" />
     <ClInclude Include="Ram.h" />
     <ClInclude Include="RamChip.h" />
   </ItemGroup>

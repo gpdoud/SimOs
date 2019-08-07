@@ -24,12 +24,18 @@
     <ClCompile Include="Ram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Alu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="RamChip.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Ram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Alu.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
