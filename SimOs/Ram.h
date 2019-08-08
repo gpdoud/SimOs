@@ -1,14 +1,9 @@
-#include <vector>
-#include "RamChip.h"
 #pragma once
-
+#define REGISTER_COUNT (16)
 class Ram {
 public:
-    std::vector<RamChip*> *RamStack;
-    RamChip* R(int i);
-    Ram(int i = 3);
-    ~Ram();
-    void ToBinary(int i);
-    int Count();
-};
+    int reg[REGISTER_COUNT];
 
+    Ram();
+    void bin(int i);
+};

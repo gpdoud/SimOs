@@ -1,14 +1,14 @@
 #include "RamChip.h"
 
 void RamChip::init() {
-    chip = new __int32;
+    chip = 0;
     RamChip::set(0);
 }
 int RamChip::get() {
-    return (int)* chip;
+    return (int) chip;
 }
 void RamChip::set(int i) {
-    *chip = i;
+    chip = i;
 }
 int RamChip::operator+(int i) {
     return RamChip::get() + i;
@@ -22,8 +22,9 @@ int RamChip::operator<<(int i) {
 int RamChip::operator>>(int i) {
     return RamChip::get() >> i;
 }
-RamChip RamChip::operator&(RamChip &rc) {
-    return RamChip(*this & rc);
+RamChip RamChip::operator&(RamChip rc) {
+    auto irc = rc.chip;
+    return chip & irc;
 }
 RamChip::RamChip() {
     init();

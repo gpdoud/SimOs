@@ -15,31 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="RamChip.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Ram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Alu.cpp">
+    <ClCompile Include="Stack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="RamChip.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Text Include="Notes.md" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="Ram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Alu.h">
+    <ClInclude Include="Stack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Notes.md" />
   </ItemGroup>
 </Project>
