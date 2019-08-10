@@ -1,9 +1,15 @@
 #pragma once
-#define REGISTER_COUNT (16)
+#define NBR_REGS (1024 * 1024)
 class Ram {
-public:
-    int reg[REGISTER_COUNT];
 
+    int* _reg;
+
+public:
+    int reg(int idx);
+    void reg(int idx, int val);
     Ram();
+    ~Ram();
+    int max();
     void bin(int i);
+    int operator[](int idx);
 };

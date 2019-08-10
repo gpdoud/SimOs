@@ -1,16 +1,26 @@
 #include "Alu.h"
-#include "Ram.h"
-#include "RamChip.h"
+#include "Stack.h"
 
-Alu::Alu() {}
-
-void Alu::Add(RamChip r1, RamChip r2) {
-    r1.set(r1.get() + r2.get());
+Alu::Alu(Stack *stack) {
+    this->stack = stack;
 }
-void Alu::Sub(RamChip r1, RamChip r2) {
-    r1.set(r1.get() - r2.get());
+void Alu::Add() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    stack->push(a + b);
 }
-void Alu::And(RamChip r1, RamChip r2) {
-    auto rx = r1 & r2;
-    r1.set(rx.get());
+void Alu::Sub() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    stack->push(a - b);
+}
+void Alu::And() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    auto c = a & b;
+}
+void Alu::Or() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    auto c = a | b;
 }

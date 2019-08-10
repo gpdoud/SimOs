@@ -151,6 +151,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Alu.cpp" />
+    <ClCompile Include="Cpu.cpp" />
+    <ClCompile Include="Heap.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Ram.cpp" />
     <ClCompile Include="Stack.cpp" />
@@ -159,6 +162,9 @@
     <Text Include="Notes.md" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Alu.h" />
+    <ClInclude Include="Cpu.h" />
+    <ClInclude Include="Heap.h" />
     <ClInclude Include="Ram.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>

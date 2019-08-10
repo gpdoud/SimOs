@@ -1,13 +1,19 @@
+#include <iostream>
+#include <bitset>
 #include "Stack.h"
 
 void Stack::push(int i) {
-    ram.reg[top] = i;
-    top++;
+    ram->reg(top++, i);
 }
 int Stack::pop() {
-    top--;
-    return ram.reg[top];
+    return 0;
 }
-Stack::Stack() {
-    top = 0;
+int Stack::peek(int i) {
+    return ram->reg(i);
+}
+void Stack::bin() {
+}
+Stack::Stack(Ram *r, int top) {
+    ram = r;
+    Stack::top = top;
 }

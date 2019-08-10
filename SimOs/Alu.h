@@ -1,12 +1,12 @@
 #pragma once
-#include "RamChip.h"
+#include "Stack.h"
 
 class Alu {
-
 public:
-    Alu();
-    static void Add(RamChip r1, RamChip r2);
-    static void Sub(RamChip r1, RamChip r2);
-    static void And(RamChip r1, RamChip r2);
+    Stack *stack;
+    Alu(Stack *stack);
+    void Add();
+    void Sub();
+    void And();
+    void Or();
 };
-
