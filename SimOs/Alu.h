@@ -12,4 +12,6 @@ public:
     void Mod();
     void And();
     void Or();
+    void Not();
+    void Xor();
 };

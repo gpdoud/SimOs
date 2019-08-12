@@ -39,3 +39,12 @@ void Alu::Or() {
     auto b = stack->pop();
     stack->push(a | b);
 }
+void Alu::Not() {
+    auto a = stack->pop();
+    stack->push(~a + 1);
+}
+void Alu::Xor() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    stack->push(a ^ b);
+}
