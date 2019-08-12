@@ -14,13 +14,28 @@ void Alu::Sub() {
     auto b = stack->pop();
     stack->push(a - b);
 }
+void Alu::Mul() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    stack->push(a * b);
+}
+void Alu::Div() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    stack->push(b / a);
+}
+void Alu::Mod() {
+    auto a = stack->pop();
+    auto b = stack->pop();
+    stack->push(b % a);
+}
 void Alu::And() {
     auto a = stack->pop();
     auto b = stack->pop();
-    auto c = a & b;
+    stack->push(a & b);
 }
 void Alu::Or() {
     auto a = stack->pop();
     auto b = stack->pop();
-    auto c = a | b;
+    stack->push(a | b);
 }

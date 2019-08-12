@@ -7,6 +7,9 @@ public:
     Alu(Stack *stack);
     void Add();
     void Sub();
+    void Mul();
+    void Div();
+    void Mod();
     void And();
     void Or();
 };

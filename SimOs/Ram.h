@@ -1,4 +1,5 @@
 #pragma once
+// 1 MB
 #define NBR_REGS (1024 * 1024)
 class Ram {
 

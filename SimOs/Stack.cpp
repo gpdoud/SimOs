@@ -6,7 +6,9 @@ void Stack::push(int i) {
     ram->reg(top++, i);
 }
 int Stack::pop() {
-    return 0;
+    auto i = ram->reg(--top);
+    ram->reg(top, 0); // set unused stack back to zreo
+    return i;
 }
 int Stack::peek(int i) {
     return ram->reg(i);
