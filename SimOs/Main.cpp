@@ -1,8 +1,22 @@
 #include <iostream>
 #include <bitset>
+#include <vector>
 #include "Alu.h"
+#include "Stack.h"
+#include "Ram.h"
+#include "Program.h"
 
-int main() {
+void test();
+
+int main(int argc, char* argv[]) {
+    std::vector<std::string> files;
+    for(auto idx = 1; idx < argc; idx++) {
+        files.push_back(argv[idx]);
+        Program::Run(argv[idx]);
+    }
+    //test();
+}
+void test() {
     //Cpu cpu;
     Ram ram;
     Stack stk(&ram, 5);
