@@ -155,9 +155,12 @@
     <ClCompile Include="Cpu.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Os.cpp" />
+    <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Ram.cpp" />
     <ClCompile Include="Stack.cpp" />
+    <ClCompile Include="StringUtility.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Notes.md" />
@@ -166,17 +169,17 @@
     <ClInclude Include="Alu.h" />
     <ClInclude Include="Cpu.h" />
     <ClInclude Include="Heap.h" />
+    <ClInclude Include="Os.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Ram.h" />
     <ClInclude Include="Stack.h" />
+    <ClInclude Include="StringUtility.h" />
   </ItemGroup>
   <ItemGroup>
-    <Xsd Include="TestProgram.gd">
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
-      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
-    </Xsd>
+    <None Include="test-program.x">
+      <FileType>Text</FileType>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

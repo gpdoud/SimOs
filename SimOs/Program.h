@@ -1,9 +1,15 @@
 #pragma once
 #include <string>
+#include <vector>
+
+using namespace std;
+
 class Program {
+    vector<string> lines;
 public:
     Program();
     ~Program();
-    static bool Run(std::string file);
+    bool Load(string file);
+    void Run();
 };
 
