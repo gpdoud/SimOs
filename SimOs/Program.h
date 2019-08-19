@@ -5,11 +5,14 @@
 using namespace std;
 
 class Program {
+    int idx = 0;
     vector<string> lines;
 public:
     Program();
     ~Program();
     bool Load(string file);
-    void Run();
+    void Reset();
+    void Next();
+    string Current();
 };
 

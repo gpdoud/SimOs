@@ -7,11 +7,11 @@
 
 using namespace std;
 
-void Program::Run() {
-    for(auto idx = 0; idx < lines.size(); idx++) {
-        auto line = lines[idx];
-        Cpu::Execute(line);
-    }
+void Program::Reset() { idx = 0; }
+void Program::Next() { idx++; }
+string Program::Current() {
+    if(idx < lines.size())
+        return lines.at(idx);
 }
 bool Program::Load(string filename) {
     string line;
