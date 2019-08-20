@@ -9,7 +9,7 @@ OS::~OS() {}
 void OS::Bootstrap() {
     cout << "Bootstrap()" << endl;
     commands["echo"] = cmdEcho;
-    commands["shutdown"] = cmdShutdown;
+    commands["end"] = cmdEnd;
 }
 string OS::PromptCommand() {
     cout << "> ";
@@ -18,21 +18,23 @@ string OS::PromptCommand() {
     getline(cin, cmd);
     return cmd;
 }
-bool OS::ProcessCommand(string cmd) {
-    auto cmdFound = commands.count(cmd) == 1;
-    if(!cmdFound) {
-        cout << cmd << ":Unknown command" << endl;
+//TODO: need to break cmd into cmd and parms
+bool OS::ProcessCommand(string cmdLine) {
+    auto cmdLineFound = commands.count(cmdLine) == 1;
+    if(!cmdLineFound) {
+        cout << cmdLine << ": Unknown command" << endl;
         return false;
     }
-    switch(commands[cmd]) {
+    switch(commands[cmdLine]) {
     case cmdEcho:
-        cout << cmd << endl;
+        cout << cmdLine << endl;
         break;
-    case cmdShutdown:
+    case cmdEnd:
         return true;
     }
     return false;
 }
+//TODO: Need to change shutdown so it is triggered from ProcessCommand
 void OS::Run() {
     cout << "Run()" << endl;
     auto shutdown = false;

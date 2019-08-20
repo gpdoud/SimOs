@@ -6,7 +6,7 @@ using namespace std;
 
 static enum Cmds {
     cmdEcho,
-    cmdShutdown
+    cmdEnd
 };
 class OS {
     Program pgm;
