@@ -5,7 +5,7 @@
 using namespace std;
 
 class Program {
-    int idx = 0;
+    unsigned int idx = 0;
     vector<string> lines;
 public:
     Program();

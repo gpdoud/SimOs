@@ -8,7 +8,7 @@ using namespace std;
 class OS {
     Program pgm;
     string PromptCommand();
-    bool ProcessCommand(string cmd);
+    void ProcessCommand(string cmd, bool &shutdown);
     map<string, OsCommand> commands;
 public:
     OS();

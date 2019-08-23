@@ -1,6 +1,7 @@
 #pragma once
-static enum OsCommand {
+enum OsCommand {
     cmdEcho,
     cmdBlank,
-    cmdEnd
+    cmdExit,
+    cmdUnknown
 };

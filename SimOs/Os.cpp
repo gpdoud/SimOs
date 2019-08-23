@@ -1,7 +1,9 @@
 #include <iostream>
+#include <sstream>
 #include "Os.h"
 #include "Command.h"
 #include "OsCommands.h"
+#include "Logger.h"
 
 using namespace std;
 
@@ -9,10 +11,13 @@ OS::OS() {}
 OS::~OS() {}
 
 void OS::Bootstrap() {
-    cout << "Bootstrap()" << endl;
+    Logger::Info("Bootstrap()");
     commands["echo"] = cmdEcho;
+    Logger::Info("Defined the 'echo' command. Echos parameters.");
     commands[""] = cmdBlank;
-    commands["end"] = cmdEnd;
+    Logger::Info("Defined the blank command: does nothing.");
+    commands["exit"] = cmdExit;
+    Logger::Info("Defined the 'exit' command. Performs shutdown.");
 }
 string OS::PromptCommand() {
     cout << "> ";
@@ -21,30 +26,47 @@ string OS::PromptCommand() {
     getline(cin, cmd);
     return cmd;
 }
-//TODO: need to break cmd into cmd and parms
-bool OS::ProcessCommand(string cmdLine) {
+void OS::ProcessCommand(string cmdLine, bool &shutdown) {
+    shutdown = false;
     auto *cmd = Command::Parse(cmdLine);
-    switch(commands[cmd->cmd]) {
+    OsCommand osCmd;
+    
+    if(commands.count(cmd->cmd) == 1)
+        osCmd = commands[cmd->cmd];
+    else
+        osCmd = OsCommand::cmdUnknown;
+    stringstream ss;
+
+    switch(osCmd) {
     case cmdBlank:
+        Logger::Info("(blank)");
         break;
     case cmdEcho:
-        cout << cmd->parms.at(0) << endl;
+        for(auto iter = cmd->parms.begin(); iter < cmd->parms.end(); iter++) {
+            ss << *iter << " ";
+        }
+        Logger::Info(ss.str());
         break;
-    case cmdEnd:
-        return true;
+    case cmdExit:
+        Logger::Info("shutdown");
+        shutdown = true;
+        break;
+    case cmdUnknown:
+        Logger::Info("unknown: " + cmd->cmd);
+        break;
+    default:
+        Logger::Warn("not defined.");
     }
-    return false;
 }
-//TODO: Need to change shutdown so it is triggered from ProcessCommand
 void OS::Run() {
-    cout << "Run()" << endl;
+    Logger::Log("Run()");
     auto shutdown = false;
     string cmd;
     while(!shutdown) {
         cmd = PromptCommand();
-        shutdown = ProcessCommand(cmd);
+        ProcessCommand(cmd, shutdown);
     }
 }
 void OS::Shutdown() {
-    cout << "Shutdown()" << endl;
+    Logger::Info("Shutdown()");
 }

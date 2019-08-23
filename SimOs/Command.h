@@ -7,7 +7,7 @@ class Command {
 public:
     string cmd;
     vector<string> parms;
-    int cmdType;
+    int cmdType = -1;
     Command();
     ~Command();
     static Command* Parse(const string cmdLine);
