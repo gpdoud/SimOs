@@ -1,18 +1,15 @@
 #pragma once
 #include <map>
 #include "Program.h"
+#include "OsCommands.h"
 
 using namespace std;
 
-static enum Cmds {
-    cmdEcho,
-    cmdEnd
-};
 class OS {
     Program pgm;
     string PromptCommand();
     bool ProcessCommand(string cmd);
-    map<string, Cmds> commands;
+    map<string, OsCommand> commands;
 public:
     OS();
     ~OS();

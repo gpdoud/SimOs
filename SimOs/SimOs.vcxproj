@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Alu.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="Cpu.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -167,9 +168,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Alu.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="Cpu.h" />
     <ClInclude Include="Heap.h" />
     <ClInclude Include="Os.h" />
+    <ClInclude Include="OsCommands.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Program.h" />
     <ClInclude Include="Ram.h" />

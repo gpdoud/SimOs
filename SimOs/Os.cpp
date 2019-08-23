@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Os.h"
+#include "Command.h"
+#include "OsCommands.h"
 
 using namespace std;
 
@@ -9,6 +11,7 @@ OS::~OS() {}
 void OS::Bootstrap() {
     cout << "Bootstrap()" << endl;
     commands["echo"] = cmdEcho;
+    commands[""] = cmdBlank;
     commands["end"] = cmdEnd;
 }
 string OS::PromptCommand() {
@@ -20,14 +23,12 @@ string OS::PromptCommand() {
 }
 //TODO: need to break cmd into cmd and parms
 bool OS::ProcessCommand(string cmdLine) {
-    auto cmdLineFound = commands.count(cmdLine) == 1;
-    if(!cmdLineFound) {
-        cout << cmdLine << ": Unknown command" << endl;
-        return false;
-    }
-    switch(commands[cmdLine]) {
+    auto *cmd = Command::Parse(cmdLine);
+    switch(commands[cmd->cmd]) {
+    case cmdBlank:
+        break;
     case cmdEcho:
-        cout << cmdLine << endl;
+        cout << cmd->parms.at(0) << endl;
         break;
     case cmdEnd:
         return true;
